@@ -1,0 +1,62 @@
+@page {
+  size: letter;
+}
+
+/* change to e.g. @page chapter */
+/* @page {
+  @top-left {
+    content: element(hdrDivLeft);
+    vertical-align: middle;
+  }
+
+  @top-center {
+    content: element(hdrDivCenter);
+    vertical-align: middle;
+  }
+
+  @top-right {
+    content: element(hdrDivRight);
+    vertical-align: middle;
+  }
+} */
+
+section.level2 {
+  page: chapter;
+}
+
+#hdr-div-left {
+  position: running(hdrDivLeft);
+}
+
+#hdr-div-center {
+  position: running(hdrDivCenter);
+}
+
+#hdr-div-right {
+  position: running(hdrDivRight);
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media not print {
+  #hdr-div-left {
+    order: 0;
+  }
+
+  #hdr-div-center {
+    order: 1;
+  }
+
+  #hdr-div-right {
+    order: 2;
+  }
+}
